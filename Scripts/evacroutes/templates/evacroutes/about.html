@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Home Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% load staticfiles %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+a{text-decoration: none; color: black}
+.oneClass {
+  background-color: #008000;
+  color: white;
+}
+.secondClass {
+  background-color: green;
+  color: white;
+}
+.tab { 
+       display:inline-block; 
+       margin-left: 175px; 
+}
+mark {
+  background-color: green;
+  color: white;
+}
+</style>
+<body>
+<!-- Header -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">BRAHMASTRA</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id="myNavbar">
+      <li class="active"><a href="/">HOME</a></li>
+      <li><a href="/victim">VICTIM</a></li>
+      <li><a href="/form">POST UPDATE</a></li>
+    </ul>
+    </div>
+  </div>
+</nav>
+<div class="oneClass" style="margin-top:50px;padding:1px 6px;text-align: center;">
+  <h2 class="w3-margin">Follow these Simple Steps</h2>
+</div>
+
+<!-- First Grid -->
+<!-- Third Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+    <h1><b>User Guide for Victim</b></h1>
+    <br>
+    <h4>Step 1 - <a href="https://play.google.com/store/apps/details?id=com.africastalking.sandbox" target="_blank" style="text-decoration:underline">Download</a> the Africa Talking App from playstore or <a href="https://simulator.africastalking.com:1517/" target="_blank" style="text-decoration:underline">launch</a> the simulator</h4>
+    <h4>Step 2 - Login with your Mobile Number and then choose USSD </h4>
+    <h4>Step 3 - Enter *384*3833#</h4>
+    <h4>Step 4 - Enter your current location and pincode in the SMS window as instructed in pop window </h4>
+    <h4>Step 5 - Enter *384*3833# </h4>
+    <h4>Step 6 - Chose 1 for support service and 2 to reach a shelter </h4>
+    <h4>Step 7 - You can further update your location or cancel request when you have been rescued </h4>
+    <h4>Step 8 - You can check the nearest volunteer assigned on choosing 2  'Reach a Shelter'</h4>
+    <br>
+    <h4>Ask help by sending SMS saying "HELP message" to 86387</h4>
+    </div>
+
+    <div class="w3-third w3-center">
+      <img src="{% static 'press1.png' %}" alt="signal" height="350" width="300">
+    </div>
+  </div>
+</div>
+
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+    <h1><b>User guide for volunteer</b></h1>
+    <br>
+    <h4>Step 1 - Register yourself and you will be able to view the nearby victims in need.</h4>
+    <h4>Step 2 - Send alerts to volunteers by sending SMS saying "ALERT message" to 86387</h4>
+    </div>
+
+    <div class="w3-third w3-center">
+      <img src="{% static 'manual1.png' %}" alt="signal" height="300" width="250">
+    </div>
+  </div>
+</div>
+
+<div class="oneClass" style="margin-top:50px;padding:1px 6px;text-align: center;">
+  <h1 class="w3-margin">About us</h1>
+</div>
+
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1><mark>Alpha-Cube</mark></h1>
+      <br>
+      <h5 >We at Alpha Cube belive that enabling effecient communication between affected regions and 
+      relief camps will solve a major problem during natural disasters . </h5><br>
+
+      <h5 >The role of communication networks is crucial during a natural disaster . During any disaster the communication between the relief forces and victims becomes a major problem due to low network connectivity. Also many lives are lost due to lack of proper evacuation and placement of the relief camp. </h5>
+      <br><h5>Brahmastra comprises of two solutions which need to be put together during the disaster to enable effective communication. The first is to leverage the limited connectivity networks using USSD and SMS to create a medium enabling people affected by a disaster to reach the volunteers and rescue teams.</h5><br>
+      <h5>Using USSD and SMS features from any phone irrespective of type, people in the affected zone can request for help from volunteers and rescuers. This helps in making the disaster relief faster and manage shelters accordingly. The second is a distributed peer driven LTE and rescue support network that is enabled by small portable networking infrastructure. We enabled this for small ranges using the power of a raspberry pi and enabling networking and access to data collection and enabling communication in a localized area. A collection of these devices can be networked together to increase the range of communication and the area covered with a communication network enabling USSD, SMS and intranet based management applications.</h5>
+    </div>
+
+    <div class="w3-third w3-center">
+      <img src="{% static 'signal.png' %}" alt="signal" height="400" width="350">
+    </div>
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div>
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+    </div>
+
+    <div class="w3-twothird">
+
+      <h1><b>Technologies Used</b></h1>
+      <br>
+      <h4 class="w3-text-grey">1) <a href="https://africastalking.com/" target="_blank">Africa Talking API</a> -  To simulate USSD (Unstructured Supplementary Service Data) application</h3>
+      <p class="tab"></p>
+      <img src = "{%static 'african-talking.jpeg' %}" alt="signal" height="150" width="200">
+
+      <h4 class="w3-text-grey">2) <a href="https://www.microsoft.com/en-us/maps/v8-control" target="_blank">Bing Maps</a> -  To display the locations of stranded people .</h3>
+      <br>
+      <p class="tab"></p>
+      <img src = "{%static 'bing-logo.png' %}" alt="signal" height="150" width="200">
+      <br>
+
+
+      <h4 class="w3-text-grey">3) <a href="https://www.djangoproject.com/" target="_blank">Django</a> - Python Web Framework</h3>
+      <br>
+      <p class="tab"></p>
+      <img src = "{%static 'django-logo.png' %}" alt="signal" height="150" width="200">
+      <br>
+
+
+      <h4 class="w3-text-grey">3) <a href="https://www.djangoproject.com/" target="_blank">Raspberry Pi</a> - To create network</h3> 
+      <br>
+      <div>
+      <p class="tab"></p>
+      <img src = "{%static 'raspberry-pi.png' %}" alt="signal" height="150" width="200">
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+

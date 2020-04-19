@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Victim</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script type='text/javascript'
+            src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap'
+            async defer></script>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style>
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+        </button>
+      <a class="navbar-brand" href="#">BRAHMASTRA</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id="myNavbar">
+      <li><a href="/">HOME</a></li>
+      <li class="active"><a href="/victim">VICTIM</a></li>
+      <li><a href="/form">POST UPDATE</a></li>
+    </ul>
+  </div>
+</nav>
+    <div id="content" hidden>
+        {% for victim in victims %}
+            <div class="victim">
+                <div class="phone_number">{{ victim.phone_number }}</div>
+                <div class="lat">{{ victim.lat }}</div>
+                <div class="lon">{{ victim.lon }}</div>
+                <div class="time">{{ victim.reported_date|timesince }}</div>
+            </div>
+        {% endfor %}
+    </div>
+    <div id="container" style="margin: 80px auto 0px;width:90%">                                   
+        <div class="row">
+            <div class="col col-sm-9">
+                <div class="row text-center">
+                    <div class="col col-sm-12">
+                        <div id="myMap"></div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col col-sm-12">
+                        <div><button id="heatmap" class="btn btn-primary">Toggle heatmap</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-sm-3" style="overflow: scroll;height: 550px;">
+                <h3 class="text-center">Victims</h3>
+                {% for victim in victims %}
+                <div class="card" style="border: 1px solid #ccc;border-radius: 5px;box-shadow: 3px 3px 3px #ccc;padding: 10px;">
+                    <div class="card-body text-center">
+                        <form action="/victim/" method="POST">
+                            <p><strong>{{ victim.phone_number }}</strong></p>
+                            <input type="text" name="phone_number" value={{ victim.phone_number }} hidden>
+                            <p>{{ victim.location }}</p>
+                            <input type="text" name="location" value={{ victim.location }} hidden>
+                            <p>{{ victim.reported_date|timesince }} ago</p>
+                            {% if victim.rescued %}
+                            <p class="text-success">Rescued</p>
+                            {% else %}
+                            <p class="text-danger">Not Rescued</p>
+                            <button class="btn btn-success" type="submit" style="width: 40%;height: 30px;padding:0px">Rescue</button>
+                            {% endif %}
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
+           </div> 
+        </div>
+    </div>                
+    <script type='text/javascript' src="{% static 'map.js' %}"></script>
+</body>
+</html>

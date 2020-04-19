@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="button_send">Send</string>
+    <string name="button_getLocation">Send Location - Victim</string>
+    <string name="button_getlocationv">Send Location - Volunteer</string>
+    <string name="title_activity_show_locationv">ShowLocationvActivity</string>
+</resources>
